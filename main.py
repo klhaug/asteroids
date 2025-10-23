@@ -4,13 +4,18 @@ from constants import *
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    x = 1
-    while x > 0:
+    Clock = pygame.time.Clock()
+    dt = 0
+    
+    while True > 0:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-            return
+                return
         screen.fill("black")
         pygame.display.flip()
+        Clock.tick(60)
+        dt = Clock.tick(60) / 1000
+
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
