@@ -8,6 +8,7 @@ from shot import *
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.toggle_fullscreen()
     Clock = pygame.time.Clock()
     dt = 0
 
@@ -44,8 +45,8 @@ def main():
         for object in drawable:
             object.draw(screen)
         pygame.display.flip()
-        Clock.tick(60)
-        dt = Clock.tick(60) / 1000
+        Clock.tick(120)
+        dt = Clock.tick(120) / 1000
 
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
