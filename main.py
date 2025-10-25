@@ -7,6 +7,7 @@ from shot import *
 
 def main():
     pygame.init()
+    background = pygame.image.load('./background.png')
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.toggle_fullscreen()
     Clock = pygame.time.Clock()
@@ -31,6 +32,8 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+        screen.blit(background, (0,0))
+        background
         updatable.update(dt)
         for asteroid in asteroids:
             if asteroid.collision(my_player):
