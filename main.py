@@ -33,7 +33,6 @@ def main():
                 return
         screen.fill("black")
         screen.blit(background, (0,0))
-        background
         updatable.update(dt)
         for asteroid in asteroids:
             if asteroid.collision(my_player):
